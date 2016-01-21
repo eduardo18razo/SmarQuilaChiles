@@ -1,0 +1,1721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuilaChilesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="IdCargo" />
+          </Key>
+          <Property Name="IdCargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNegocio" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="FechaActualizacion" Type="datetime" />
+          <Property Name="Imagen" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Colonias">
+          <Key>
+            <PropertyRef Name="IdColonia" />
+          </Key>
+          <Property Name="IdColonia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMunicipio" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="CP" Type="int" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSucursal" Type="int" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="EmpleadoCargo">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="int" Nullable="false" />
+          <Property Name="IdCargo" Type="int" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdColonia" Type="int" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="RazonSocial" Type="nvarchar(max)" />
+          <Property Name="RFC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CalleNo" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logo" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Estatus">
+          <Key>
+            <PropertyRef Name="IdEstatus" />
+          </Key>
+          <Property Name="IdEstatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="int" />
+          <Property Name="TipoEstatus" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Insumo">
+          <Key>
+            <PropertyRef Name="IdInsumo" />
+          </Key>
+          <Property Name="IdInsumo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNegocio" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdUnidad" Type="int" />
+          <Property Name="Stock" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="StockMinimo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="StockMaximo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Rendimiento" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="InsumoPresentacion">
+          <Key>
+            <PropertyRef Name="IdInsumoPresentacion" />
+          </Key>
+          <Property Name="IdInsumoPresentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInsumo" Type="int" />
+          <Property Name="IdPresentacion" Type="int" />
+          <Property Name="RendimientoPromedio" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="InsumoProducto">
+          <Key>
+            <PropertyRef Name="IdInsumoProducto" />
+          </Key>
+          <Property Name="IdInsumoProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNegocio" Type="int" />
+          <Property Name="IdInsumo" Type="int" />
+          <Property Name="IdProducto" Type="int" />
+          <Property Name="IdUnidad" Type="int" />
+          <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CostoProduccion" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Mesas">
+          <Key>
+            <PropertyRef Name="IdMesa" />
+          </Key>
+          <Property Name="IdMesa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNivel" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Activa" Type="bit" />
+        </EntityType>
+        <EntityType Name="Municipios">
+          <Key>
+            <PropertyRef Name="IdMunicipio" />
+          </Key>
+          <Property Name="IdMunicipio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEstado" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NegociosEmpresa">
+          <Key>
+            <PropertyRef Name="IdNegocio" />
+          </Key>
+          <Property Name="IdNegocio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmpresa" Type="int" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="Logo" Type="varbinary(max)" />
+          <Property Name="Activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="NivelSucursal">
+          <Key>
+            <PropertyRef Name="IdNivel" />
+          </Key>
+          <Property Name="IdNivel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSucursal" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Orden">
+          <Key>
+            <PropertyRef Name="IdOrden" />
+          </Key>
+          <Property Name="IdOrden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMesa" Type="int" />
+          <Property Name="IdEmpleadoAtiende" Type="int" />
+          <Property Name="IdEstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="OrdenDetalle">
+          <Key>
+            <PropertyRef Name="IdDetalleOrden" />
+          </Key>
+          <Property Name="IdDetalleOrden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdOrden" Type="int" />
+          <Property Name="IdProducto" Type="int" />
+          <Property Name="IdEStatus" Type="int" />
+          <Property Name="Observaciones" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Presentaciones">
+          <Key>
+            <PropertyRef Name="IdPresentacion" />
+          </Key>
+          <Property Name="IdPresentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNegocio" Type="int" />
+          <Property Name="IdUnidadMedida" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Costo" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCategoria" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="FechaActualizacion" Type="datetime" />
+          <Property Name="Disponible" Type="bit" />
+        </EntityType>
+        <EntityType Name="SucursalNegocio">
+          <Key>
+            <PropertyRef Name="IdSucursal" />
+          </Key>
+          <Property Name="IdSucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNegocio" Type="int" />
+          <Property Name="IdColonia" Type="int" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="CalleNo" Type="nvarchar(max)" />
+          <Property Name="Activa" Type="bit" />
+        </EntityType>
+        <EntityType Name="UnidadMedida">
+          <Key>
+            <PropertyRef Name="IdUnidadMedida" />
+          </Key>
+          <Property Name="IdUnidadMedida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Extracto" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_c02_Municipios_c01_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="0..1" />
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="Municipios">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_c03_Colonias_c02_Municipios">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="0..1" />
+          <End Role="Colonias" Type="Self.Colonias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="IdMunicipio" />
+            </Principal>
+            <Dependent Role="Colonias">
+              <PropertyRef Name="IdMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categoria_NegociosEmpresa">
+          <End Role="NegociosEmpresa" Type="Self.NegociosEmpresa" Multiplicity="0..1" />
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="Categoria">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpleadoCargo_Cargo">
+          <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+          <End Role="EmpleadoCargo" Type="Self.EmpleadoCargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="IdCargo" />
+            </Principal>
+            <Dependent Role="EmpleadoCargo">
+              <PropertyRef Name="IdCargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpleadoCargo_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="EmpleadoCargo" Type="Self.EmpleadoCargo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="EmpleadoCargo">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Colonias">
+          <End Role="Colonias" Type="Self.Colonias" Multiplicity="0..1" />
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colonias">
+              <PropertyRef Name="IdColonia" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="IdColonia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insumo_NegociosEmpresa">
+          <End Role="NegociosEmpresa" Type="Self.NegociosEmpresa" Multiplicity="0..1" />
+          <End Role="Insumo" Type="Self.Insumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="Insumo">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insumo_Unidad">
+          <End Role="UnidadMedida" Type="Self.UnidadMedida" Multiplicity="0..1" />
+          <End Role="Insumo" Type="Self.Insumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Principal>
+            <Dependent Role="Insumo">
+              <PropertyRef Name="IdUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoPresentacion_Insumo">
+          <End Role="Insumo" Type="Self.Insumo" Multiplicity="0..1" />
+          <End Role="InsumoPresentacion" Type="Self.InsumoPresentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insumo">
+              <PropertyRef Name="IdInsumo" />
+            </Principal>
+            <Dependent Role="InsumoPresentacion">
+              <PropertyRef Name="IdInsumo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoPresentacion_Presentaciones">
+          <End Role="Presentaciones" Type="Self.Presentaciones" Multiplicity="0..1" />
+          <End Role="InsumoPresentacion" Type="Self.InsumoPresentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentaciones">
+              <PropertyRef Name="IdPresentacion" />
+            </Principal>
+            <Dependent Role="InsumoPresentacion">
+              <PropertyRef Name="IdPresentacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_Insumo">
+          <End Role="Insumo" Type="Self.Insumo" Multiplicity="0..1" />
+          <End Role="InsumoProducto" Type="Self.InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insumo">
+              <PropertyRef Name="IdInsumo" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdInsumo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_NegociosEmpresa">
+          <End Role="NegociosEmpresa" Type="Self.NegociosEmpresa" Multiplicity="0..1" />
+          <End Role="InsumoProducto" Type="Self.InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_Producto">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+          <End Role="InsumoProducto" Type="Self.InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="IdProducto" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_Unidad">
+          <End Role="UnidadMedida" Type="Self.UnidadMedida" Multiplicity="0..1" />
+          <End Role="InsumoProducto" Type="Self.InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mesas_NivelSucursal">
+          <End Role="NivelSucursal" Type="Self.NivelSucursal" Multiplicity="0..1" />
+          <End Role="Mesas" Type="Self.Mesas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NivelSucursal">
+              <PropertyRef Name="IdNivel" />
+            </Principal>
+            <Dependent Role="Mesas">
+              <PropertyRef Name="IdNivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NegociosEmpresa_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="NegociosEmpresa" Type="Self.NegociosEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="NegociosEmpresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NivelSucursal_SucursalNegocio">
+          <End Role="SucursalNegocio" Type="Self.SucursalNegocio" Multiplicity="0..1" />
+          <End Role="NivelSucursal" Type="Self.NivelSucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SucursalNegocio">
+              <PropertyRef Name="IdSucursal" />
+            </Principal>
+            <Dependent Role="NivelSucursal">
+              <PropertyRef Name="IdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orden_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+          <End Role="Orden" Type="Self.Orden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="Orden">
+              <PropertyRef Name="IdEmpleadoAtiende" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orden_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="Orden" Type="Self.Orden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Orden">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orden_Mesas">
+          <End Role="Mesas" Type="Self.Mesas" Multiplicity="0..1" />
+          <End Role="Orden" Type="Self.Orden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mesas">
+              <PropertyRef Name="IdMesa" />
+            </Principal>
+            <Dependent Role="Orden">
+              <PropertyRef Name="IdMesa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenDetalle_Estatus">
+          <End Role="Estatus" Type="Self.Estatus" Multiplicity="0..1" />
+          <End Role="OrdenDetalle" Type="Self.OrdenDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="OrdenDetalle">
+              <PropertyRef Name="IdEStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenDetalle_Orden">
+          <End Role="Orden" Type="Self.Orden" Multiplicity="0..1" />
+          <End Role="OrdenDetalle" Type="Self.OrdenDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orden">
+              <PropertyRef Name="IdOrden" />
+            </Principal>
+            <Dependent Role="OrdenDetalle">
+              <PropertyRef Name="IdOrden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenDetalle_Producto">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+          <End Role="OrdenDetalle" Type="Self.OrdenDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="IdProducto" />
+            </Principal>
+            <Dependent Role="OrdenDetalle">
+              <PropertyRef Name="IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Presentaciones_NegociosEmpresa">
+          <End Role="NegociosEmpresa" Type="Self.NegociosEmpresa" Multiplicity="0..1" />
+          <End Role="Presentaciones" Type="Self.Presentaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="Presentaciones">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Presentaciones_Unidad">
+          <End Role="UnidadMedida" Type="Self.UnidadMedida" Multiplicity="0..1" />
+          <End Role="Presentaciones" Type="Self.Presentaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Principal>
+            <Dependent Role="Presentaciones">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producto_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SucursalNegocio_Colonias">
+          <End Role="Colonias" Type="Self.Colonias" Multiplicity="0..1" />
+          <End Role="SucursalNegocio" Type="Self.SucursalNegocio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colonias">
+              <PropertyRef Name="IdColonia" />
+            </Principal>
+            <Dependent Role="SucursalNegocio">
+              <PropertyRef Name="IdColonia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SucursalNegocio_NegociosEmpresa">
+          <End Role="NegociosEmpresa" Type="Self.NegociosEmpresa" Multiplicity="0..1" />
+          <End Role="SucursalNegocio" Type="Self.SucursalNegocio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="SucursalNegocio">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuilaChilesModelStoreContainer">
+          <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colonias" EntityType="Self.Colonias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpleadoCargo" EntityType="Self.EmpleadoCargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Insumo" EntityType="Self.Insumo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InsumoPresentacion" EntityType="Self.InsumoPresentacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InsumoProducto" EntityType="Self.InsumoProducto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mesas" EntityType="Self.Mesas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NegociosEmpresa" EntityType="Self.NegociosEmpresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NivelSucursal" EntityType="Self.NivelSucursal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orden" EntityType="Self.Orden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdenDetalle" EntityType="Self.OrdenDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Presentaciones" EntityType="Self.Presentaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SucursalNegocio" EntityType="Self.SucursalNegocio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UnidadMedida" EntityType="Self.UnidadMedida" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_c02_Municipios_c01_Estados" Association="Self.FK_c02_Municipios_c01_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Municipios" EntitySet="Municipios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_c03_Colonias_c02_Municipios" Association="Self.FK_c03_Colonias_c02_Municipios">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Colonias" EntitySet="Colonias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categoria_NegociosEmpresa" Association="Self.FK_Categoria_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="Categoria" EntitySet="Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpleadoCargo_Cargo" Association="Self.FK_EmpleadoCargo_Cargo">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="EmpleadoCargo" EntitySet="EmpleadoCargo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpleadoCargo_Empleado" Association="Self.FK_EmpleadoCargo_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="EmpleadoCargo" EntitySet="EmpleadoCargo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Colonias" Association="Self.FK_Empresa_Colonias">
+            <End Role="Colonias" EntitySet="Colonias" />
+            <End Role="Empresa" EntitySet="Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insumo_NegociosEmpresa" Association="Self.FK_Insumo_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="Insumo" EntitySet="Insumo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insumo_Unidad" Association="Self.FK_Insumo_Unidad">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="Insumo" EntitySet="Insumo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoPresentacion_Insumo" Association="Self.FK_InsumoPresentacion_Insumo">
+            <End Role="Insumo" EntitySet="Insumo" />
+            <End Role="InsumoPresentacion" EntitySet="InsumoPresentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoPresentacion_Presentaciones" Association="Self.FK_InsumoPresentacion_Presentaciones">
+            <End Role="Presentaciones" EntitySet="Presentaciones" />
+            <End Role="InsumoPresentacion" EntitySet="InsumoPresentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_Insumo" Association="Self.FK_InsumoProducto_Insumo">
+            <End Role="Insumo" EntitySet="Insumo" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_NegociosEmpresa" Association="Self.FK_InsumoProducto_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_Producto" Association="Self.FK_InsumoProducto_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_Unidad" Association="Self.FK_InsumoProducto_Unidad">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mesas_NivelSucursal" Association="Self.FK_Mesas_NivelSucursal">
+            <End Role="NivelSucursal" EntitySet="NivelSucursal" />
+            <End Role="Mesas" EntitySet="Mesas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NegociosEmpresa_Empresa" Association="Self.FK_NegociosEmpresa_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NivelSucursal_SucursalNegocio" Association="Self.FK_NivelSucursal_SucursalNegocio">
+            <End Role="SucursalNegocio" EntitySet="SucursalNegocio" />
+            <End Role="NivelSucursal" EntitySet="NivelSucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orden_Empleado" Association="Self.FK_Orden_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Orden" EntitySet="Orden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orden_Estatus" Association="Self.FK_Orden_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Orden" EntitySet="Orden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orden_Mesas" Association="Self.FK_Orden_Mesas">
+            <End Role="Mesas" EntitySet="Mesas" />
+            <End Role="Orden" EntitySet="Orden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenDetalle_Estatus" Association="Self.FK_OrdenDetalle_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="OrdenDetalle" EntitySet="OrdenDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenDetalle_Orden" Association="Self.FK_OrdenDetalle_Orden">
+            <End Role="Orden" EntitySet="Orden" />
+            <End Role="OrdenDetalle" EntitySet="OrdenDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenDetalle_Producto" Association="Self.FK_OrdenDetalle_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="OrdenDetalle" EntitySet="OrdenDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presentaciones_NegociosEmpresa" Association="Self.FK_Presentaciones_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="Presentaciones" EntitySet="Presentaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presentaciones_Unidad" Association="Self.FK_Presentaciones_Unidad">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="Presentaciones" EntitySet="Presentaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Categoria" Association="Self.FK_Producto_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SucursalNegocio_Colonias" Association="Self.FK_SucursalNegocio_Colonias">
+            <End Role="Colonias" EntitySet="Colonias" />
+            <End Role="SucursalNegocio" EntitySet="SucursalNegocio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SucursalNegocio_NegociosEmpresa" Association="Self.FK_SucursalNegocio_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="SucursalNegocio" EntitySet="SucursalNegocio" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuilaChilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QuilaChilesConn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cargo" EntityType="QuilaChilesModel.Cargo" />
+          <EntitySet Name="Categoria" EntityType="QuilaChilesModel.Categoria" />
+          <EntitySet Name="Colonias" EntityType="QuilaChilesModel.Colonias" />
+          <EntitySet Name="Empleado" EntityType="QuilaChilesModel.Empleado" />
+          <EntitySet Name="EmpleadoCargo" EntityType="QuilaChilesModel.EmpleadoCargo" />
+          <EntitySet Name="Empresa" EntityType="QuilaChilesModel.Empresa" />
+          <EntitySet Name="Estados" EntityType="QuilaChilesModel.Estados" />
+          <EntitySet Name="Estatus" EntityType="QuilaChilesModel.Estatus" />
+          <EntitySet Name="Insumo" EntityType="QuilaChilesModel.Insumo" />
+          <EntitySet Name="InsumoPresentacion" EntityType="QuilaChilesModel.InsumoPresentacion" />
+          <EntitySet Name="InsumoProducto" EntityType="QuilaChilesModel.InsumoProducto" />
+          <EntitySet Name="Mesas" EntityType="QuilaChilesModel.Mesas" />
+          <EntitySet Name="Municipios" EntityType="QuilaChilesModel.Municipios" />
+          <EntitySet Name="NegociosEmpresa" EntityType="QuilaChilesModel.NegociosEmpresa" />
+          <EntitySet Name="NivelSucursal" EntityType="QuilaChilesModel.NivelSucursal" />
+          <EntitySet Name="Orden" EntityType="QuilaChilesModel.Orden" />
+          <EntitySet Name="OrdenDetalle" EntityType="QuilaChilesModel.OrdenDetalle" />
+          <EntitySet Name="Presentaciones" EntityType="QuilaChilesModel.Presentaciones" />
+          <EntitySet Name="Producto" EntityType="QuilaChilesModel.Producto" />
+          <EntitySet Name="SucursalNegocio" EntityType="QuilaChilesModel.SucursalNegocio" />
+          <EntitySet Name="UnidadMedida" EntityType="QuilaChilesModel.UnidadMedida" />
+          <AssociationSet Name="FK_EmpleadoCargo_Cargo" Association="QuilaChilesModel.FK_EmpleadoCargo_Cargo">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="EmpleadoCargo" EntitySet="EmpleadoCargo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categoria_NegociosEmpresa" Association="QuilaChilesModel.FK_Categoria_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="Categoria" EntitySet="Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Categoria" Association="QuilaChilesModel.FK_Producto_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_c03_Colonias_c02_Municipios" Association="QuilaChilesModel.FK_c03_Colonias_c02_Municipios">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Colonias" EntitySet="Colonias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Colonias" Association="QuilaChilesModel.FK_Empresa_Colonias">
+            <End Role="Colonias" EntitySet="Colonias" />
+            <End Role="Empresa" EntitySet="Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SucursalNegocio_Colonias" Association="QuilaChilesModel.FK_SucursalNegocio_Colonias">
+            <End Role="Colonias" EntitySet="Colonias" />
+            <End Role="SucursalNegocio" EntitySet="SucursalNegocio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpleadoCargo_Empleado" Association="QuilaChilesModel.FK_EmpleadoCargo_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="EmpleadoCargo" EntitySet="EmpleadoCargo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orden_Empleado" Association="QuilaChilesModel.FK_Orden_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Orden" EntitySet="Orden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NegociosEmpresa_Empresa" Association="QuilaChilesModel.FK_NegociosEmpresa_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_c02_Municipios_c01_Estados" Association="QuilaChilesModel.FK_c02_Municipios_c01_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Municipios" EntitySet="Municipios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orden_Estatus" Association="QuilaChilesModel.FK_Orden_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="Orden" EntitySet="Orden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenDetalle_Estatus" Association="QuilaChilesModel.FK_OrdenDetalle_Estatus">
+            <End Role="Estatus" EntitySet="Estatus" />
+            <End Role="OrdenDetalle" EntitySet="OrdenDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insumo_NegociosEmpresa" Association="QuilaChilesModel.FK_Insumo_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="Insumo" EntitySet="Insumo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insumo_Unidad" Association="QuilaChilesModel.FK_Insumo_Unidad">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="Insumo" EntitySet="Insumo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoPresentacion_Insumo" Association="QuilaChilesModel.FK_InsumoPresentacion_Insumo">
+            <End Role="Insumo" EntitySet="Insumo" />
+            <End Role="InsumoPresentacion" EntitySet="InsumoPresentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_Insumo" Association="QuilaChilesModel.FK_InsumoProducto_Insumo">
+            <End Role="Insumo" EntitySet="Insumo" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoPresentacion_Presentaciones" Association="QuilaChilesModel.FK_InsumoPresentacion_Presentaciones">
+            <End Role="Presentaciones" EntitySet="Presentaciones" />
+            <End Role="InsumoPresentacion" EntitySet="InsumoPresentacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_NegociosEmpresa" Association="QuilaChilesModel.FK_InsumoProducto_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_Producto" Association="QuilaChilesModel.FK_InsumoProducto_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InsumoProducto_Unidad" Association="QuilaChilesModel.FK_InsumoProducto_Unidad">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="InsumoProducto" EntitySet="InsumoProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mesas_NivelSucursal" Association="QuilaChilesModel.FK_Mesas_NivelSucursal">
+            <End Role="NivelSucursal" EntitySet="NivelSucursal" />
+            <End Role="Mesas" EntitySet="Mesas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orden_Mesas" Association="QuilaChilesModel.FK_Orden_Mesas">
+            <End Role="Mesas" EntitySet="Mesas" />
+            <End Role="Orden" EntitySet="Orden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presentaciones_NegociosEmpresa" Association="QuilaChilesModel.FK_Presentaciones_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="Presentaciones" EntitySet="Presentaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SucursalNegocio_NegociosEmpresa" Association="QuilaChilesModel.FK_SucursalNegocio_NegociosEmpresa">
+            <End Role="NegociosEmpresa" EntitySet="NegociosEmpresa" />
+            <End Role="SucursalNegocio" EntitySet="SucursalNegocio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NivelSucursal_SucursalNegocio" Association="QuilaChilesModel.FK_NivelSucursal_SucursalNegocio">
+            <End Role="SucursalNegocio" EntitySet="SucursalNegocio" />
+            <End Role="NivelSucursal" EntitySet="NivelSucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenDetalle_Orden" Association="QuilaChilesModel.FK_OrdenDetalle_Orden">
+            <End Role="Orden" EntitySet="Orden" />
+            <End Role="OrdenDetalle" EntitySet="OrdenDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenDetalle_Producto" Association="QuilaChilesModel.FK_OrdenDetalle_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="OrdenDetalle" EntitySet="OrdenDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presentaciones_Unidad" Association="QuilaChilesModel.FK_Presentaciones_Unidad">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="Presentaciones" EntitySet="Presentaciones" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="IdCargo" />
+          </Key>
+          <Property Name="IdCargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmpleadoCargo" Relationship="QuilaChilesModel.FK_EmpleadoCargo_Cargo" FromRole="Cargo" ToRole="EmpleadoCargo" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNegocio" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="NegociosEmpresa" Relationship="QuilaChilesModel.FK_Categoria_NegociosEmpresa" FromRole="Categoria" ToRole="NegociosEmpresa" />
+          <NavigationProperty Name="Producto" Relationship="QuilaChilesModel.FK_Producto_Categoria" FromRole="Categoria" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Colonias">
+          <Key>
+            <PropertyRef Name="IdColonia" />
+          </Key>
+          <Property Name="IdColonia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMunicipio" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CP" Type="Int32" />
+          <NavigationProperty Name="Municipios" Relationship="QuilaChilesModel.FK_c03_Colonias_c02_Municipios" FromRole="Colonias" ToRole="Municipios" />
+          <NavigationProperty Name="Empresa" Relationship="QuilaChilesModel.FK_Empresa_Colonias" FromRole="Colonias" ToRole="Empresa" />
+          <NavigationProperty Name="SucursalNegocio" Relationship="QuilaChilesModel.FK_SucursalNegocio_Colonias" FromRole="Colonias" ToRole="SucursalNegocio" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSucursal" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" />
+          <NavigationProperty Name="EmpleadoCargo" Relationship="QuilaChilesModel.FK_EmpleadoCargo_Empleado" FromRole="Empleado" ToRole="EmpleadoCargo" />
+          <NavigationProperty Name="Orden" Relationship="QuilaChilesModel.FK_Orden_Empleado" FromRole="Empleado" ToRole="Orden" />
+        </EntityType>
+        <EntityType Name="EmpleadoCargo">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="IdCargo" Type="Int32" />
+          <NavigationProperty Name="Cargo" Relationship="QuilaChilesModel.FK_EmpleadoCargo_Cargo" FromRole="EmpleadoCargo" ToRole="Cargo" />
+          <NavigationProperty Name="Empleado" Relationship="QuilaChilesModel.FK_EmpleadoCargo_Empleado" FromRole="EmpleadoCargo" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+          </Key>
+          <Property Name="IdEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdColonia" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RazonSocial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CalleNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Colonias" Relationship="QuilaChilesModel.FK_Empresa_Colonias" FromRole="Empresa" ToRole="Colonias" />
+          <NavigationProperty Name="NegociosEmpresa" Relationship="QuilaChilesModel.FK_NegociosEmpresa_Empresa" FromRole="Empresa" ToRole="NegociosEmpresa" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Municipios" Relationship="QuilaChilesModel.FK_c02_Municipios_c01_Estados" FromRole="Estados" ToRole="Municipios" />
+        </EntityType>
+        <EntityType Name="Estatus">
+          <Key>
+            <PropertyRef Name="IdEstatus" />
+          </Key>
+          <Property Name="IdEstatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="Int32" />
+          <Property Name="TipoEstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orden" Relationship="QuilaChilesModel.FK_Orden_Estatus" FromRole="Estatus" ToRole="Orden" />
+          <NavigationProperty Name="OrdenDetalle" Relationship="QuilaChilesModel.FK_OrdenDetalle_Estatus" FromRole="Estatus" ToRole="OrdenDetalle" />
+        </EntityType>
+        <EntityType Name="Insumo">
+          <Key>
+            <PropertyRef Name="IdInsumo" />
+          </Key>
+          <Property Name="IdInsumo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNegocio" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdUnidad" Type="Int32" />
+          <Property Name="Stock" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StockMinimo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StockMaximo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rendimiento" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="NegociosEmpresa" Relationship="QuilaChilesModel.FK_Insumo_NegociosEmpresa" FromRole="Insumo" ToRole="NegociosEmpresa" />
+          <NavigationProperty Name="UnidadMedida" Relationship="QuilaChilesModel.FK_Insumo_Unidad" FromRole="Insumo" ToRole="UnidadMedida" />
+          <NavigationProperty Name="InsumoPresentacion" Relationship="QuilaChilesModel.FK_InsumoPresentacion_Insumo" FromRole="Insumo" ToRole="InsumoPresentacion" />
+          <NavigationProperty Name="InsumoProducto" Relationship="QuilaChilesModel.FK_InsumoProducto_Insumo" FromRole="Insumo" ToRole="InsumoProducto" />
+        </EntityType>
+        <EntityType Name="InsumoPresentacion">
+          <Key>
+            <PropertyRef Name="IdInsumoPresentacion" />
+          </Key>
+          <Property Name="IdInsumoPresentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdInsumo" Type="Int32" />
+          <Property Name="IdPresentacion" Type="Int32" />
+          <Property Name="RendimientoPromedio" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Insumo" Relationship="QuilaChilesModel.FK_InsumoPresentacion_Insumo" FromRole="InsumoPresentacion" ToRole="Insumo" />
+          <NavigationProperty Name="Presentaciones" Relationship="QuilaChilesModel.FK_InsumoPresentacion_Presentaciones" FromRole="InsumoPresentacion" ToRole="Presentaciones" />
+        </EntityType>
+        <EntityType Name="InsumoProducto">
+          <Key>
+            <PropertyRef Name="IdInsumoProducto" />
+          </Key>
+          <Property Name="IdInsumoProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNegocio" Type="Int32" />
+          <Property Name="IdInsumo" Type="Int32" />
+          <Property Name="IdProducto" Type="Int32" />
+          <Property Name="IdUnidad" Type="Int32" />
+          <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CostoProduccion" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Insumo" Relationship="QuilaChilesModel.FK_InsumoProducto_Insumo" FromRole="InsumoProducto" ToRole="Insumo" />
+          <NavigationProperty Name="NegociosEmpresa" Relationship="QuilaChilesModel.FK_InsumoProducto_NegociosEmpresa" FromRole="InsumoProducto" ToRole="NegociosEmpresa" />
+          <NavigationProperty Name="Producto" Relationship="QuilaChilesModel.FK_InsumoProducto_Producto" FromRole="InsumoProducto" ToRole="Producto" />
+          <NavigationProperty Name="UnidadMedida" Relationship="QuilaChilesModel.FK_InsumoProducto_Unidad" FromRole="InsumoProducto" ToRole="UnidadMedida" />
+        </EntityType>
+        <EntityType Name="Mesas">
+          <Key>
+            <PropertyRef Name="IdMesa" />
+          </Key>
+          <Property Name="IdMesa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNivel" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Activa" Type="Boolean" />
+          <NavigationProperty Name="NivelSucursal" Relationship="QuilaChilesModel.FK_Mesas_NivelSucursal" FromRole="Mesas" ToRole="NivelSucursal" />
+          <NavigationProperty Name="Orden" Relationship="QuilaChilesModel.FK_Orden_Mesas" FromRole="Mesas" ToRole="Orden" />
+        </EntityType>
+        <EntityType Name="Municipios">
+          <Key>
+            <PropertyRef Name="IdMunicipio" />
+          </Key>
+          <Property Name="IdMunicipio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEstado" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Colonias" Relationship="QuilaChilesModel.FK_c03_Colonias_c02_Municipios" FromRole="Municipios" ToRole="Colonias" />
+          <NavigationProperty Name="Estados" Relationship="QuilaChilesModel.FK_c02_Municipios_c01_Estados" FromRole="Municipios" ToRole="Estados" />
+        </EntityType>
+        <EntityType Name="NegociosEmpresa">
+          <Key>
+            <PropertyRef Name="IdNegocio" />
+          </Key>
+          <Property Name="IdNegocio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmpresa" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <NavigationProperty Name="Categoria" Relationship="QuilaChilesModel.FK_Categoria_NegociosEmpresa" FromRole="NegociosEmpresa" ToRole="Categoria" />
+          <NavigationProperty Name="Empresa" Relationship="QuilaChilesModel.FK_NegociosEmpresa_Empresa" FromRole="NegociosEmpresa" ToRole="Empresa" />
+          <NavigationProperty Name="Insumo" Relationship="QuilaChilesModel.FK_Insumo_NegociosEmpresa" FromRole="NegociosEmpresa" ToRole="Insumo" />
+          <NavigationProperty Name="InsumoProducto" Relationship="QuilaChilesModel.FK_InsumoProducto_NegociosEmpresa" FromRole="NegociosEmpresa" ToRole="InsumoProducto" />
+          <NavigationProperty Name="Presentaciones" Relationship="QuilaChilesModel.FK_Presentaciones_NegociosEmpresa" FromRole="NegociosEmpresa" ToRole="Presentaciones" />
+          <NavigationProperty Name="SucursalNegocio" Relationship="QuilaChilesModel.FK_SucursalNegocio_NegociosEmpresa" FromRole="NegociosEmpresa" ToRole="SucursalNegocio" />
+        </EntityType>
+        <EntityType Name="NivelSucursal">
+          <Key>
+            <PropertyRef Name="IdNivel" />
+          </Key>
+          <Property Name="IdNivel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSucursal" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Mesas" Relationship="QuilaChilesModel.FK_Mesas_NivelSucursal" FromRole="NivelSucursal" ToRole="Mesas" />
+          <NavigationProperty Name="SucursalNegocio" Relationship="QuilaChilesModel.FK_NivelSucursal_SucursalNegocio" FromRole="NivelSucursal" ToRole="SucursalNegocio" />
+        </EntityType>
+        <EntityType Name="Orden">
+          <Key>
+            <PropertyRef Name="IdOrden" />
+          </Key>
+          <Property Name="IdOrden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMesa" Type="Int32" />
+          <Property Name="IdEmpleadoAtiende" Type="Int32" />
+          <Property Name="IdEstatus" Type="Int32" />
+          <NavigationProperty Name="Empleado" Relationship="QuilaChilesModel.FK_Orden_Empleado" FromRole="Orden" ToRole="Empleado" />
+          <NavigationProperty Name="Estatus" Relationship="QuilaChilesModel.FK_Orden_Estatus" FromRole="Orden" ToRole="Estatus" />
+          <NavigationProperty Name="Mesas" Relationship="QuilaChilesModel.FK_Orden_Mesas" FromRole="Orden" ToRole="Mesas" />
+          <NavigationProperty Name="OrdenDetalle" Relationship="QuilaChilesModel.FK_OrdenDetalle_Orden" FromRole="Orden" ToRole="OrdenDetalle" />
+        </EntityType>
+        <EntityType Name="OrdenDetalle">
+          <Key>
+            <PropertyRef Name="IdDetalleOrden" />
+          </Key>
+          <Property Name="IdDetalleOrden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdOrden" Type="Int32" />
+          <Property Name="IdProducto" Type="Int32" />
+          <Property Name="IdEStatus" Type="Int32" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Estatus" Relationship="QuilaChilesModel.FK_OrdenDetalle_Estatus" FromRole="OrdenDetalle" ToRole="Estatus" />
+          <NavigationProperty Name="Orden" Relationship="QuilaChilesModel.FK_OrdenDetalle_Orden" FromRole="OrdenDetalle" ToRole="Orden" />
+          <NavigationProperty Name="Producto" Relationship="QuilaChilesModel.FK_OrdenDetalle_Producto" FromRole="OrdenDetalle" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Presentaciones">
+          <Key>
+            <PropertyRef Name="IdPresentacion" />
+          </Key>
+          <Property Name="IdPresentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNegocio" Type="Int32" />
+          <Property Name="IdUnidadMedida" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Costo" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="InsumoPresentacion" Relationship="QuilaChilesModel.FK_InsumoPresentacion_Presentaciones" FromRole="Presentaciones" ToRole="InsumoPresentacion" />
+          <NavigationProperty Name="NegociosEmpresa" Relationship="QuilaChilesModel.FK_Presentaciones_NegociosEmpresa" FromRole="Presentaciones" ToRole="NegociosEmpresa" />
+          <NavigationProperty Name="UnidadMedida" Relationship="QuilaChilesModel.FK_Presentaciones_Unidad" FromRole="Presentaciones" ToRole="UnidadMedida" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCategoria" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="Disponible" Type="Boolean" />
+          <NavigationProperty Name="Categoria" Relationship="QuilaChilesModel.FK_Producto_Categoria" FromRole="Producto" ToRole="Categoria" />
+          <NavigationProperty Name="InsumoProducto" Relationship="QuilaChilesModel.FK_InsumoProducto_Producto" FromRole="Producto" ToRole="InsumoProducto" />
+          <NavigationProperty Name="OrdenDetalle" Relationship="QuilaChilesModel.FK_OrdenDetalle_Producto" FromRole="Producto" ToRole="OrdenDetalle" />
+        </EntityType>
+        <EntityType Name="SucursalNegocio">
+          <Key>
+            <PropertyRef Name="IdSucursal" />
+          </Key>
+          <Property Name="IdSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNegocio" Type="Int32" />
+          <Property Name="IdColonia" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CalleNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Activa" Type="Boolean" />
+          <NavigationProperty Name="Colonias" Relationship="QuilaChilesModel.FK_SucursalNegocio_Colonias" FromRole="SucursalNegocio" ToRole="Colonias" />
+          <NavigationProperty Name="NegociosEmpresa" Relationship="QuilaChilesModel.FK_SucursalNegocio_NegociosEmpresa" FromRole="SucursalNegocio" ToRole="NegociosEmpresa" />
+          <NavigationProperty Name="NivelSucursal" Relationship="QuilaChilesModel.FK_NivelSucursal_SucursalNegocio" FromRole="SucursalNegocio" ToRole="NivelSucursal" />
+        </EntityType>
+        <EntityType Name="UnidadMedida">
+          <Key>
+            <PropertyRef Name="IdUnidadMedida" />
+          </Key>
+          <Property Name="IdUnidadMedida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Extracto" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Insumo" Relationship="QuilaChilesModel.FK_Insumo_Unidad" FromRole="UnidadMedida" ToRole="Insumo" />
+          <NavigationProperty Name="InsumoProducto" Relationship="QuilaChilesModel.FK_InsumoProducto_Unidad" FromRole="UnidadMedida" ToRole="InsumoProducto" />
+          <NavigationProperty Name="Presentaciones" Relationship="QuilaChilesModel.FK_Presentaciones_Unidad" FromRole="UnidadMedida" ToRole="Presentaciones" />
+        </EntityType>
+        <Association Name="FK_EmpleadoCargo_Cargo">
+          <End Type="QuilaChilesModel.Cargo" Role="Cargo" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.EmpleadoCargo" Role="EmpleadoCargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="IdCargo" />
+            </Principal>
+            <Dependent Role="EmpleadoCargo">
+              <PropertyRef Name="IdCargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categoria_NegociosEmpresa">
+          <End Type="QuilaChilesModel.NegociosEmpresa" Role="NegociosEmpresa" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Categoria" Role="Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="Categoria">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producto_Categoria">
+          <End Type="QuilaChilesModel.Categoria" Role="Categoria" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_c03_Colonias_c02_Municipios">
+          <End Type="QuilaChilesModel.Municipios" Role="Municipios" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Colonias" Role="Colonias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="IdMunicipio" />
+            </Principal>
+            <Dependent Role="Colonias">
+              <PropertyRef Name="IdMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Colonias">
+          <End Type="QuilaChilesModel.Colonias" Role="Colonias" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Empresa" Role="Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colonias">
+              <PropertyRef Name="IdColonia" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="IdColonia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SucursalNegocio_Colonias">
+          <End Type="QuilaChilesModel.Colonias" Role="Colonias" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.SucursalNegocio" Role="SucursalNegocio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colonias">
+              <PropertyRef Name="IdColonia" />
+            </Principal>
+            <Dependent Role="SucursalNegocio">
+              <PropertyRef Name="IdColonia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpleadoCargo_Empleado">
+          <End Type="QuilaChilesModel.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="QuilaChilesModel.EmpleadoCargo" Role="EmpleadoCargo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="EmpleadoCargo">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orden_Empleado">
+          <End Type="QuilaChilesModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Orden" Role="Orden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="Orden">
+              <PropertyRef Name="IdEmpleadoAtiende" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NegociosEmpresa_Empresa">
+          <End Type="QuilaChilesModel.Empresa" Role="Empresa" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.NegociosEmpresa" Role="NegociosEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="NegociosEmpresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_c02_Municipios_c01_Estados">
+          <End Type="QuilaChilesModel.Estados" Role="Estados" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Municipios" Role="Municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="IdEstado" />
+            </Principal>
+            <Dependent Role="Municipios">
+              <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orden_Estatus">
+          <End Type="QuilaChilesModel.Estatus" Role="Estatus" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Orden" Role="Orden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="Orden">
+              <PropertyRef Name="IdEstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenDetalle_Estatus">
+          <End Type="QuilaChilesModel.Estatus" Role="Estatus" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.OrdenDetalle" Role="OrdenDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estatus">
+              <PropertyRef Name="IdEstatus" />
+            </Principal>
+            <Dependent Role="OrdenDetalle">
+              <PropertyRef Name="IdEStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insumo_NegociosEmpresa">
+          <End Type="QuilaChilesModel.NegociosEmpresa" Role="NegociosEmpresa" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Insumo" Role="Insumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="Insumo">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insumo_Unidad">
+          <End Type="QuilaChilesModel.UnidadMedida" Role="UnidadMedida" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Insumo" Role="Insumo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Principal>
+            <Dependent Role="Insumo">
+              <PropertyRef Name="IdUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoPresentacion_Insumo">
+          <End Type="QuilaChilesModel.Insumo" Role="Insumo" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.InsumoPresentacion" Role="InsumoPresentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insumo">
+              <PropertyRef Name="IdInsumo" />
+            </Principal>
+            <Dependent Role="InsumoPresentacion">
+              <PropertyRef Name="IdInsumo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_Insumo">
+          <End Type="QuilaChilesModel.Insumo" Role="Insumo" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.InsumoProducto" Role="InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insumo">
+              <PropertyRef Name="IdInsumo" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdInsumo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoPresentacion_Presentaciones">
+          <End Type="QuilaChilesModel.Presentaciones" Role="Presentaciones" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.InsumoPresentacion" Role="InsumoPresentacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentaciones">
+              <PropertyRef Name="IdPresentacion" />
+            </Principal>
+            <Dependent Role="InsumoPresentacion">
+              <PropertyRef Name="IdPresentacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_NegociosEmpresa">
+          <End Type="QuilaChilesModel.NegociosEmpresa" Role="NegociosEmpresa" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.InsumoProducto" Role="InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_Producto">
+          <End Type="QuilaChilesModel.Producto" Role="Producto" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.InsumoProducto" Role="InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="IdProducto" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InsumoProducto_Unidad">
+          <End Type="QuilaChilesModel.UnidadMedida" Role="UnidadMedida" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.InsumoProducto" Role="InsumoProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Principal>
+            <Dependent Role="InsumoProducto">
+              <PropertyRef Name="IdUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mesas_NivelSucursal">
+          <End Type="QuilaChilesModel.NivelSucursal" Role="NivelSucursal" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Mesas" Role="Mesas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NivelSucursal">
+              <PropertyRef Name="IdNivel" />
+            </Principal>
+            <Dependent Role="Mesas">
+              <PropertyRef Name="IdNivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orden_Mesas">
+          <End Type="QuilaChilesModel.Mesas" Role="Mesas" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Orden" Role="Orden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mesas">
+              <PropertyRef Name="IdMesa" />
+            </Principal>
+            <Dependent Role="Orden">
+              <PropertyRef Name="IdMesa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Presentaciones_NegociosEmpresa">
+          <End Type="QuilaChilesModel.NegociosEmpresa" Role="NegociosEmpresa" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Presentaciones" Role="Presentaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="Presentaciones">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SucursalNegocio_NegociosEmpresa">
+          <End Type="QuilaChilesModel.NegociosEmpresa" Role="NegociosEmpresa" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.SucursalNegocio" Role="SucursalNegocio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NegociosEmpresa">
+              <PropertyRef Name="IdNegocio" />
+            </Principal>
+            <Dependent Role="SucursalNegocio">
+              <PropertyRef Name="IdNegocio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NivelSucursal_SucursalNegocio">
+          <End Type="QuilaChilesModel.SucursalNegocio" Role="SucursalNegocio" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.NivelSucursal" Role="NivelSucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SucursalNegocio">
+              <PropertyRef Name="IdSucursal" />
+            </Principal>
+            <Dependent Role="NivelSucursal">
+              <PropertyRef Name="IdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenDetalle_Orden">
+          <End Type="QuilaChilesModel.Orden" Role="Orden" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.OrdenDetalle" Role="OrdenDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orden">
+              <PropertyRef Name="IdOrden" />
+            </Principal>
+            <Dependent Role="OrdenDetalle">
+              <PropertyRef Name="IdOrden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenDetalle_Producto">
+          <End Type="QuilaChilesModel.Producto" Role="Producto" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.OrdenDetalle" Role="OrdenDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="IdProducto" />
+            </Principal>
+            <Dependent Role="OrdenDetalle">
+              <PropertyRef Name="IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Presentaciones_Unidad">
+          <End Type="QuilaChilesModel.UnidadMedida" Role="UnidadMedida" Multiplicity="0..1" />
+          <End Type="QuilaChilesModel.Presentaciones" Role="Presentaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Principal>
+            <Dependent Role="Presentaciones">
+              <PropertyRef Name="IdUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuilaChilesModelStoreContainer" CdmEntityContainer="QuilaChilesConn">
+          <EntitySetMapping Name="Cargo">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Cargo">
+              <MappingFragment StoreEntitySet="Cargo">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colonias">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Colonias">
+              <MappingFragment StoreEntitySet="Colonias">
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+                <ScalarProperty Name="IdColonia" ColumnName="IdColonia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpleadoCargo">
+            <EntityTypeMapping TypeName="QuilaChilesModel.EmpleadoCargo">
+              <MappingFragment StoreEntitySet="EmpleadoCargo">
+                <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresa">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CalleNo" ColumnName="CalleNo" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdColonia" ColumnName="IdColonia" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Estados">
+              <MappingFragment StoreEntitySet="Estados">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estatus">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Estatus">
+              <MappingFragment StoreEntitySet="Estatus">
+                <ScalarProperty Name="TipoEstatus" ColumnName="TipoEstatus" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insumo">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Insumo">
+              <MappingFragment StoreEntitySet="Insumo">
+                <ScalarProperty Name="Rendimiento" ColumnName="Rendimiento" />
+                <ScalarProperty Name="StockMaximo" ColumnName="StockMaximo" />
+                <ScalarProperty Name="StockMinimo" ColumnName="StockMinimo" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+                <ScalarProperty Name="IdInsumo" ColumnName="IdInsumo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InsumoPresentacion">
+            <EntityTypeMapping TypeName="QuilaChilesModel.InsumoPresentacion">
+              <MappingFragment StoreEntitySet="InsumoPresentacion">
+                <ScalarProperty Name="RendimientoPromedio" ColumnName="RendimientoPromedio" />
+                <ScalarProperty Name="IdPresentacion" ColumnName="IdPresentacion" />
+                <ScalarProperty Name="IdInsumo" ColumnName="IdInsumo" />
+                <ScalarProperty Name="IdInsumoPresentacion" ColumnName="IdInsumoPresentacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InsumoProducto">
+            <EntityTypeMapping TypeName="QuilaChilesModel.InsumoProducto">
+              <MappingFragment StoreEntitySet="InsumoProducto">
+                <ScalarProperty Name="CostoProduccion" ColumnName="CostoProduccion" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdInsumo" ColumnName="IdInsumo" />
+                <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+                <ScalarProperty Name="IdInsumoProducto" ColumnName="IdInsumoProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mesas">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Mesas">
+              <MappingFragment StoreEntitySet="Mesas">
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+                <ScalarProperty Name="IdMesa" ColumnName="IdMesa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Municipios">
+              <MappingFragment StoreEntitySet="Municipios">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdMunicipio" ColumnName="IdMunicipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NegociosEmpresa">
+            <EntityTypeMapping TypeName="QuilaChilesModel.NegociosEmpresa">
+              <MappingFragment StoreEntitySet="NegociosEmpresa">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NivelSucursal">
+            <EntityTypeMapping TypeName="QuilaChilesModel.NivelSucursal">
+              <MappingFragment StoreEntitySet="NivelSucursal">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orden">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Orden">
+              <MappingFragment StoreEntitySet="Orden">
+                <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+                <ScalarProperty Name="IdEmpleadoAtiende" ColumnName="IdEmpleadoAtiende" />
+                <ScalarProperty Name="IdMesa" ColumnName="IdMesa" />
+                <ScalarProperty Name="IdOrden" ColumnName="IdOrden" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenDetalle">
+            <EntityTypeMapping TypeName="QuilaChilesModel.OrdenDetalle">
+              <MappingFragment StoreEntitySet="OrdenDetalle">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="IdEStatus" ColumnName="IdEStatus" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="IdOrden" ColumnName="IdOrden" />
+                <ScalarProperty Name="IdDetalleOrden" ColumnName="IdDetalleOrden" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Presentaciones">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Presentaciones">
+              <MappingFragment StoreEntitySet="Presentaciones">
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdUnidadMedida" ColumnName="IdUnidadMedida" />
+                <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+                <ScalarProperty Name="IdPresentacion" ColumnName="IdPresentacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="QuilaChilesModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SucursalNegocio">
+            <EntityTypeMapping TypeName="QuilaChilesModel.SucursalNegocio">
+              <MappingFragment StoreEntitySet="SucursalNegocio">
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+                <ScalarProperty Name="CalleNo" ColumnName="CalleNo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdColonia" ColumnName="IdColonia" />
+                <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnidadMedida">
+            <EntityTypeMapping TypeName="QuilaChilesModel.UnidadMedida">
+              <MappingFragment StoreEntitySet="UnidadMedida">
+                <ScalarProperty Name="Extracto" ColumnName="Extracto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdUnidadMedida" ColumnName="IdUnidadMedida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="8716e18b4c2049dfa12e44fb38c373d0" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="QuilaChilesModel.Cargo" Width="1.5" PointX="19.5" PointY="2.25" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Categoria" Width="1.5" PointX="12" PointY="16.125" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Colonias" Width="1.5" PointX="5.25" PointY="9.25" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Empleado" Width="1.5" PointX="19.5" PointY="4.875" />
+        <EntityTypeShape EntityType="QuilaChilesModel.EmpleadoCargo" Width="1.5" PointX="21.75" PointY="5.25" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Empresa" Width="1.5" PointX="7.5" PointY="9" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Estados" Width="1.5" PointX="0.75" PointY="9.625" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Estatus" Width="1.5" PointX="19.5" PointY="16.125" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Insumo" Width="1.5" PointX="12" PointY="4.75" />
+        <EntityTypeShape EntityType="QuilaChilesModel.InsumoPresentacion" Width="1.5" PointX="14.25" PointY="5.25" />
+        <EntityTypeShape EntityType="QuilaChilesModel.InsumoProducto" Width="1.5" PointX="17.5" PointY="11.375" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Mesas" Width="1.5" PointX="19.5" PointY="8.375" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Municipios" Width="1.5" PointX="3" PointY="9.5" />
+        <EntityTypeShape EntityType="QuilaChilesModel.NegociosEmpresa" Width="1.5" PointX="9.75" PointY="8.875" />
+        <EntityTypeShape EntityType="QuilaChilesModel.NivelSucursal" Width="1.5" PointX="17.25" PointY="8.5" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Orden" Width="1.5" PointX="21.75" PointY="8.125" />
+        <EntityTypeShape EntityType="QuilaChilesModel.OrdenDetalle" Width="1.5" PointX="16.5" PointY="16.125" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Presentaciones" Width="1.5" PointX="12" PointY="9.125" />
+        <EntityTypeShape EntityType="QuilaChilesModel.Producto" Width="1.5" PointX="14.25" PointY="16" />
+        <EntityTypeShape EntityType="QuilaChilesModel.SucursalNegocio" Width="1.5" PointX="15" PointY="9.125" />
+        <EntityTypeShape EntityType="QuilaChilesModel.UnidadMedida" Width="1.5" PointX="9.75" PointY="5.375" />
+        <AssociationConnector Association="QuilaChilesModel.FK_EmpleadoCargo_Cargo" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Categoria_NegociosEmpresa" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Producto_Categoria" />
+        <AssociationConnector Association="QuilaChilesModel.FK_c03_Colonias_c02_Municipios" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Empresa_Colonias" />
+        <AssociationConnector Association="QuilaChilesModel.FK_SucursalNegocio_Colonias" />
+        <AssociationConnector Association="QuilaChilesModel.FK_EmpleadoCargo_Empleado" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Orden_Empleado" />
+        <AssociationConnector Association="QuilaChilesModel.FK_NegociosEmpresa_Empresa" />
+        <AssociationConnector Association="QuilaChilesModel.FK_c02_Municipios_c01_Estados" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Orden_Estatus" />
+        <AssociationConnector Association="QuilaChilesModel.FK_OrdenDetalle_Estatus" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Insumo_NegociosEmpresa" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Insumo_Unidad" />
+        <AssociationConnector Association="QuilaChilesModel.FK_InsumoPresentacion_Insumo" />
+        <AssociationConnector Association="QuilaChilesModel.FK_InsumoProducto_Insumo" />
+        <AssociationConnector Association="QuilaChilesModel.FK_InsumoPresentacion_Presentaciones" />
+        <AssociationConnector Association="QuilaChilesModel.FK_InsumoProducto_NegociosEmpresa" />
+        <AssociationConnector Association="QuilaChilesModel.FK_InsumoProducto_Producto" />
+        <AssociationConnector Association="QuilaChilesModel.FK_InsumoProducto_Unidad" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Mesas_NivelSucursal" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Orden_Mesas" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Presentaciones_NegociosEmpresa" />
+        <AssociationConnector Association="QuilaChilesModel.FK_SucursalNegocio_NegociosEmpresa" />
+        <AssociationConnector Association="QuilaChilesModel.FK_NivelSucursal_SucursalNegocio" />
+        <AssociationConnector Association="QuilaChilesModel.FK_OrdenDetalle_Orden" />
+        <AssociationConnector Association="QuilaChilesModel.FK_OrdenDetalle_Producto" />
+        <AssociationConnector Association="QuilaChilesModel.FK_Presentaciones_Unidad" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

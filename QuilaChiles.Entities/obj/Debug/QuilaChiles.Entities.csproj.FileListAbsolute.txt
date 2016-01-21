@@ -1,0 +1,10 @@
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Entities\bin\Debug\QuilaChiles.Entities.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Entities\bin\Debug\QuilaChiles.Entities.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Entities\obj\Debug\QuilaChiles.Entities.csprojResolveAssemblyReference.cache
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Entities\obj\Debug\QuilaChiles.Entities.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Entities\obj\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Entities\bin\Debug\QuilaChiles.Entities.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Entities\bin\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Entities\obj\Debug\QuilaChiles.Entities.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Entities\obj\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Entities\obj\Debug\QuilaChiles.Entities.csprojResolveAssemblyReference.cache

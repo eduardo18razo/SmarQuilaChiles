@@ -1,0 +1,22 @@
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.mdf
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles_log.ldf
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Business.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Business.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Data.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Entities.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Entities.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Data.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\obj\Debug\QuilaChiles.Business.csprojResolveAssemblyReference.cache
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\obj\Debug\QuilaChiles.Business.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\QuilaChiles.Business\obj\Debug\QuilaChiles.Business.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.mdf
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles_log.ldf
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Business.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Business.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Data.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Entities.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\bin\Debug\QuilaChiles.Data.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\obj\Debug\QuilaChiles.Business.csprojResolveAssemblyReference.cache
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\obj\Debug\QuilaChiles.Business.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\QuilaChiles.Business\obj\Debug\QuilaChiles.Business.pdb

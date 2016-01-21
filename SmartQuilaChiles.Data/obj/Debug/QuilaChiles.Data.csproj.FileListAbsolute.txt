@@ -1,0 +1,24 @@
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.mdf
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles_log.ldf
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Data.dll.config
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Data.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Data.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\EntityFramework.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\EntityFramework.xml
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\obj\Debug\QuilaChiles.Data.csprojResolveAssemblyReference.cache
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\obj\Debug\QuilaChiles.Data.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\obj\Debug\QuilaChiles.Data.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Entities.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.mdf
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles_log.ldf
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Data.dll.config
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Data.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Data.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\EntityFramework.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Entities.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\bin\Debug\EntityFramework.xml
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\obj\Debug\QuilaChiles.Data.csprojResolveAssemblyReference.cache
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\obj\Debug\QuilaChiles.Data.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles.Data\obj\Debug\QuilaChiles.Data.pdb

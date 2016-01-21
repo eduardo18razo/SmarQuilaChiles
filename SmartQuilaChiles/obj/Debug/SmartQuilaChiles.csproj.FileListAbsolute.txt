@@ -1,0 +1,53 @@
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\SmartQuilaChiles.exe.config
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\SmartQuilaChiles.exe
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\SmartQuilaChiles.pdb
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.csprojResolveAssemblyReference.cache
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Properties.Resources.resources
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.csproj.GenerateResource.Cache
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.exe
+c:\users\king lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.ControlesUsuario.Teclado.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.FrmLogin.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmBienvenida.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Business.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Entities.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Business.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Entities.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Data.dll
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Data.pdb
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmConfiguracion.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmEmpresa.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmImpresoras.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmNegocios.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmSucursales.resources
+C:\Users\King Lizard\documents\visual studio 2013\Projects\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Catalogos.FrmCategorias.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\SmartQuilaChiles.exe.config
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\SmartQuilaChiles.exe
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\SmartQuilaChiles.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Business.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Entities.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Data.dll
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Business.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Entities.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\bin\Debug\QuilaChiles.Data.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.csprojResolveAssemblyReference.cache
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Catalogos.FrmCategorias.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.ControlesUsuario.Teclado.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.FrmEmpleado.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.FrmLogin.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmBienvenida.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.General.FrmSplashScreen.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Properties.Resources.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.csproj.GenerateResource.Cache
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.exe
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.pdb
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Configuracion.FrmConfiguracion.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Configuracion.FrmEmpresa.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Configuracion.FrmFirstTime.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Configuracion.FrmImpresoras.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Configuracion.FrmNegocios.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Configuracion.FrmSucursales.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Catalogos.FrmInsumos.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\QuilaChiles.Business.Catalogos.FrmPresentacionesInsumo.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Catalogos.FrmPresentaciones.resources
+D:\resp\Mis Documentos\tmpNet\SmartQuilaChiles\SmartQuilaChiles\obj\Debug\SmartQuilaChiles.Catalogos.FrmUnidadesMedida.resources

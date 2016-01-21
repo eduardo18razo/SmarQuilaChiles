@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfImpresora xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Impresora>
+    <Ubicacion>Microsoft XPS Document Writer</Ubicacion>
+    <Nombre>Cocina</Nombre>
+  </Impresora>
+  <Impresora>
+    <Ubicacion>Microsoft XPS Document Writer</Ubicacion>
+    <Nombre>Ticket</Nombre>
+  </Impresora>
+</ArrayOfImpresora>
